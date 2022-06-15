@@ -1,0 +1,16 @@
+{
+  "dummy-logins" : [
+    {
+      "username" : "testing",
+      "password" : "testing"
+    }, 
+    {
+      "username" : "attentiveai",
+      "password" : "attentive@testing"
+    },
+    {
+      "username" : "testing69",
+      "password" : "testing@42069"
+    }
+  ]
+}
