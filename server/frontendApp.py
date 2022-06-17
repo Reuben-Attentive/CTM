@@ -5,7 +5,7 @@ URL= "http://127.0.0.1:8000/loginuser/"
 
 data ={
     # 'userid':'109',
-    'username':'user89',
+    'username':'hariansh',
     'password':'qwerty@123'
     }
     # data is in python using dumps to convert it into json
