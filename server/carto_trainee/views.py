@@ -7,7 +7,7 @@ import io
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 
 
 def ctm_home(request):
@@ -38,6 +38,7 @@ def login_user(request):
         user_login = authenticate(request, username=pythondata['username'], password=pythondata['password'])
         if user_login is not None:
             # A backend authenticated the credentials
+            login(request, user_login)
             return HttpResponse(True)
         else:
             # No backend authenticated the credentials
