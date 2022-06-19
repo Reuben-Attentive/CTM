@@ -4,7 +4,7 @@
 
 ## Getting started
 
-- Install [https://www.python.org/downloads/](Python) and pip.
+- Install [Python](https://www.python.org/downloads/) and pip.
 
 - Run the following commands to check whether or not Python and pip is installed properly.
 ```
