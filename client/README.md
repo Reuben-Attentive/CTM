@@ -1,6 +1,16 @@
-# FX Training Module
+# FX Training Module (Client)
+
+- This folder contains all source code related to the client side. React.js is used for building the user interface.
 
 ## Getting started
+
+- Install [https://nodejs.org/en/download/](Node.js) and npm. 
+
+- Run the following commands to check whether or not Node.js and npm is installed properly.
+```
+node -v
+npm -v
+```
 
 - Clone this repo
 ```
