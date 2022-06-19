@@ -10,20 +10,37 @@ const Login = () => {
 
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
-    let dummyData = require('../Data/DummyLogin.json');
-    let dummyLogins = dummyData["dummy-logins"];
+    const username = values.username.trim();
+    const password = values.password.trim();
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
     
+    var raw = JSON.stringify({
+      "username": username,
+      "password": password,
+    });
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
     let setLogin = false;
-    for(let i = 0; i < dummyLogins.length; i++){
-      if(values.username === dummyLogins[i].username && values.password === dummyLogins[i].password){
-        setLogin = true;
-        break;
-      }
-    }
-    
-    if(setLogin){
-      appStoreDispatch({ type: 'SET_LOGIN', payload: { isLoggedIn: true, user: {token: 'token', id: values.username} }});
-    }
+    fetch("http://127.0.0.1:8000/loginuser/", requestOptions)
+      .then(response => response.text())
+      .then((result) => {
+        console.log(result);
+        if(result === "True"){
+          setLogin = true;
+        }
+
+        if(setLogin){
+          appStoreDispatch({ type: 'SET_LOGIN', payload: { isLoggedIn: true, user: {token: 'token', username: username, id: username} }});
+        }
+      })
+      .catch(error => console.log('error', error));
   };
   
   return (

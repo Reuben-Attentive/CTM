@@ -22,7 +22,7 @@ const HeaderContent = () => {
       onClick={handleMenuClick}
       items={[
         {
-          label: 'Signed in as ' + appStore.userId,
+          label: 'Signed in as ' + appStore.user.username,
           key: '1',
           icon: <UserOutlined />,
         },
