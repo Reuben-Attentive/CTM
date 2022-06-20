@@ -11,7 +11,7 @@
 python --version
 pip --version
 ```
-
+- 
 - Clone this repo
 ```
 git clone https://github.com/Reuben-Attentive/CTM.git
@@ -31,6 +31,7 @@ virtualenv venv
 - Activate the virtual environment.
 ```
 venv\Scripts\activate
+source venv/bin/activate(for mac)
 ```
 
 - Install dependencies using pip.
@@ -40,13 +41,14 @@ pip install -r requirements.txt
 
 - Make migrations.
 ```
-python manage.py makemigrations
-python manage.py migrate
+python manage.py makemigrations/python3 manage.py makemigrations
+python manage.py migrate/python3 manage.py migrate
 ```
 
 - Run the server.
 ```
-python manage.py runserver
+python manage.py runserver/
+python3 manage.py runserver
 ```
 
 - Go to http://127.0.0.1:8000/
