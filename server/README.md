@@ -57,3 +57,6 @@ python3 manage.py runserver
 
 ## Project status
 Ongoing
+
+username: superuser ,
+password:superuser

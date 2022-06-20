@@ -22,9 +22,14 @@ def create_user(request):
         stream = io.BytesIO(json_data)
         pythondata = JSONParser().parse(stream)
         print('pythondata----',pythondata)
-        user_in = User.objects.create_user(pythondata['username'], 'lennon@thebeatles.com', pythondata['password'])
-        
-        resp = {'msg':'user created'}
+        user_in = User.objects.create_user(username=pythondata['username'], email=pythondata['email'], password= pythondata['password'])
+        print('user_in_id----------',user_in.id)
+        resp = {
+            'msg':'user created successfully',
+            'user_id':user_in.id,
+            'username':user_in.username,
+            'email': user_in.email            
+        }
         json_data = JSONRenderer().render(resp)
         return HttpResponse(json_data, content_type= 'application/json')
             # return JsonResponse()
@@ -37,9 +42,18 @@ def login_user(request):
         pythondata = JSONParser().parse(stream)
         user_login = authenticate(request, username=pythondata['username'], password=pythondata['password'])
         if user_login is not None:
+            
             # A backend authenticated the credentials
             login(request, user_login)
-            return HttpResponse(True)
+            print('user_login_id----------',user_login.id)
+            user_login_data ={
+                "user_id":user_login.id,
+                "username":user_login.username,
+                "email":user_login.email,
+            }
+            json_data = JSONRenderer().render(user_login_data)
+            return HttpResponse(json_data, content_type= 'application/json')
+            # return HttpResponse(user_login_data)
         else:
             # No backend authenticated the credentials
             # resp = {'msg':False}
