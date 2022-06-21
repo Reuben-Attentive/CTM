@@ -29,10 +29,11 @@ const Login = () => {
 
     let setLogin = false;
     fetch("http://127.0.0.1:8000/loginuser/", requestOptions)
-      .then(response => response.text())
+      // .then(response => response.text())
+      .then(response => response)
       .then((result) => {
-        console.log(result);
-        if(result === "True"){
+        console.log(typeof result.status);
+        if(result.status === true){
           setLogin = true;
         }
 

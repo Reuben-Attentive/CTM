@@ -47,6 +47,7 @@ def login_user(request):
             login(request, user_login)
             print('user_login_id----------',user_login.id)
             user_login_data ={
+                "status":True,
                 "user_id":user_login.id,
                 "username":user_login.username,
                 "email":user_login.email,
@@ -56,8 +57,8 @@ def login_user(request):
             # return HttpResponse(user_login_data)
         else:
             # No backend authenticated the credentials
-            # resp = {'msg':False}
-            # json_data = JSONRenderer().render(resp)
-            # return HttpResponse(json_data, content_type= 'application/json')
-            return HttpResponse(False)
+            resp = {'status':False}
+            json_data = JSONRenderer().render(resp)
+            return HttpResponse(json_data, content_type= 'application/json')
+            # return HttpResponse(False)
 
