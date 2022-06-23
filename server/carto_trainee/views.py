@@ -1,6 +1,8 @@
 from django.shortcuts import render    
 from .models import users
+from .models import moduleData
 from .serializers import UserSerializer
+from .serializers import moduleDataSerializer
 from rest_framework.renderers import JSONRenderer
 from django.http import HttpRequest, HttpResponse, JsonResponse
 import io
@@ -8,6 +10,8 @@ from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
+
+from carto_trainee import serializers
 
 
 def ctm_home(request):
@@ -62,3 +66,23 @@ def login_user(request):
             return HttpResponse(json_data, content_type= 'application/json')
             # return HttpResponse(False)
 
+@csrf_exempt
+def module_data(request):
+
+    if request.method == 'GET':
+        # json_data = request.body
+        # stream = io.BytesIO(json_data)
+        # pythondata = JSONParser().parse(stream)
+        # print('pythondata----',pythondata)
+
+        data= moduleData.objects.all()
+  
+        serialized =moduleDataSerializer(data, many= True)
+
+        # data= moduleData.objects.get(module_id ='M1')
+        # serialized =moduleDataSerializer(data)
+
+
+        json_data = JSONRenderer().render(serialized.data)
+        # print('json_data---------',json_data)
+        return HttpResponse(json_data, content_type= 'application/json')
