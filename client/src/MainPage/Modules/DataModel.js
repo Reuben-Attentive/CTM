@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import React, { useContext } from 'react';
-import { Layout, Button, Row, Col, Tooltip} from 'antd';
-import { LogoutOutlined } from '@ant-design/icons';
+import { Layout, Button, Row, Col, Breadcrumb} from 'antd';
+import { HomeOutlined } from '@ant-design/icons';
 import { AppContext } from '../../Stores/AppStore';
 import HeaderContent from "../Components/HeaderContent";
 import FooterContent from "../Components/FooterContent";
@@ -23,9 +23,29 @@ const DataModel = (props) => {
       </Header>
       <Content>
         <div className="site-layout-content">
-          <div>
-            <h2>FX Training Module {module}</h2>
-          </div>
+          <Breadcrumb>
+            <Breadcrumb.Item href = "/"><HomeOutlined /></Breadcrumb.Item>
+            <Breadcrumb.Item>{module}</Breadcrumb.Item>
+          </Breadcrumb>
+          <Row justify="space-around" align="middle">
+            <Col span = {4}>
+              <Button type="primary" htmlType="submit">
+                Tutorial
+              </Button>
+            </Col>
+            <Col span = {4}>
+              <Button type="primary" htmlType="submit">
+                Practice Arena
+              </Button>
+            </Col>
+            <Col span = {4}>
+              <Button type="primary" htmlType="submit">
+                Boss Fight
+              </Button>
+            </Col>
+          </Row>
+          <br></br>
+          <br></br>
           <Row>
           <Col span = {11}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mollis enim sit amet justo pharetra consequat. Phasellus nec odio sit amet ligula vehicula mollis sed nec lorem. Quisque lorem risus, vehicula ac ultrices a, euismod in nisl. Phasellus lobortis pretium eros eu eleifend. Aenean efficitur velit vel felis mattis volutpat. Aenean tincidunt vestibulum auctor. Sed ullamcorper malesuada risus blandit fermentum. Phasellus congue ipsum at fermentum luctus. Aenean est risus, mattis posuere sagittis quis, condimentum imperdiet magna. Mauris ornare mauris sed nisi sollicitudin, et finibus arcu fermentum. Suspendisse eget tortor imperdiet, condimentum tortor sed, rutrum turpis. Proin vitae risus tincidunt, porttitor arcu non, volutpat magna. Suspendisse aliquam eros odio, eu egestas metus gravida nec. Donec lacinia scelerisque eros, sit amet congue ipsum condimentum ac. Suspendisse id enim eget quam lobortis finibus quis et justo.

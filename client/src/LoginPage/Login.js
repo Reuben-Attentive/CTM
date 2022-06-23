@@ -29,10 +29,8 @@ const Login = () => {
 
     let setLogin = false;
     fetch("http://127.0.0.1:8000/loginuser/", requestOptions)
-      // .then(response => response.text())
-      .then(response => response)
+      .then(response => response.json())
       .then((result) => {
-        console.log(typeof result.status);
         if(result.status === true){
           setLogin = true;
         }
@@ -59,7 +57,7 @@ const Login = () => {
             <br></br>
             <br></br>
             <h2>FX Training Module</h2>
-            <div style = {{backgroundColor: "#0fa61b", width: "25vw", paddingLeft: "6vw", paddingTop: "0.5vw" }}>
+            <div style = {{backgroundColor: "#0fa61b", width: "350px", padding: "5px 60px 0 60px" }}>
               <h2 style = {{color: "white"}}>Login to your account</h2>
             </div>
             <Form
@@ -71,8 +69,8 @@ const Login = () => {
               onFinish={onFinish}
               style = {{
                 backgroundColor: "#edece8",
-                padding: "2vw 2vw 0.5vw 2vw",
-                width: "25vw",
+                padding: "30px 30px 3px 30px",
+                width: "350px",
                 alignContent: "center",
                 alignItems: "center"
               }}
@@ -105,8 +103,8 @@ const Login = () => {
                 />
               </Form.Item>
           
-              <Form.Item style = {{paddingLeft: "7.5vw"}}>
-                <Button type="primary" htmlType="submit" className="login-form-button" style = {{width: "5vw", margin: "auto"}}>
+              <Form.Item style = {{paddingLeft: "100px"}}>
+                <Button type="primary" htmlType="submit" className="login-form-button" style = {{width: "90px", margin: "auto"}}>
                   Log in
                 </Button>
               </Form.Item>

@@ -22,7 +22,16 @@ const Home = () => {
               {
                 dummyHome.map((item, index) => {
                   return (
-                    <Col span = {8}  key = {index}>
+                    <Col 
+                      xs = {{
+                        span: 24,
+                      }}
+                      sm={{
+                        span: 12, 
+                      }}
+                      lg={{
+                        span: 8,
+                      }}  key = {index}>
                       <a href={`/${item.module}/data-model`}>
                         <Card type="inner" title = {item["module-name"]} bodyStyle={{padding: "0", alignContent: "center"}}>
                           <img src = "/img/background.png" alt = "background" style = {{ maxWidth: '100%', maxHeight: 'auto'}}/>
