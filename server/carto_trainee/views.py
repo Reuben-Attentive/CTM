@@ -10,7 +10,7 @@ from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
-
+import json
 from carto_trainee import serializers
 
 
@@ -35,6 +35,7 @@ def create_user(request):
             'email': user_in.email            
         }
         json_data = JSONRenderer().render(resp)
+        print('json_data---', type(json_data))
         return HttpResponse(json_data, content_type= 'application/json')
             # return JsonResponse()
 
@@ -57,12 +58,15 @@ def login_user(request):
                 "email":user_login.email,
             }
             json_data = JSONRenderer().render(user_login_data)
+            print('json_data---', type(json_data))
             return HttpResponse(json_data, content_type= 'application/json')
             # return HttpResponse(user_login_data)
         else:
             # No backend authenticated the credentials
             resp = {'status':False}
-            json_data = JSONRenderer().render(resp)
+            json_data1 = JSONRenderer().render(resp)
+            json_data = json.dumps(json_data1)
+            print('json_data---', type(json_data))
             return HttpResponse(json_data, content_type= 'application/json')
             # return HttpResponse(False)
 
@@ -75,14 +79,23 @@ def module_data(request):
         # pythondata = JSONParser().parse(stream)
         # print('pythondata----',pythondata)
 
-        data= moduleData.objects.all()
-  
+        data= moduleData.objects.all()       
         serialized =moduleDataSerializer(data, many= True)
 
-        # data= moduleData.objects.get(module_id ='M1')
-        # serialized =moduleDataSerializer(data)
-
-
         json_data = JSONRenderer().render(serialized.data)
-        # print('json_data---------',json_data)
-        return HttpResponse(json_data, content_type= 'application/json')
+        # print('dataType------',type(json_data))
+        #-----------------------------option 1
+        export_data ={
+                "data":json_data
+        }
+        # print('export_data---------',export_data)
+
+        module=JSONRenderer().render(export_data)
+        # print ('module-----',type(module))
+        return HttpResponse(module, content_type= 'application/json')
+        #.----------------------------------option 2--------------------------------
+
+        # return HttpResponse(json_data, content_type= 'application/json')
+
+
+

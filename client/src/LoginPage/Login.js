@@ -31,6 +31,7 @@ const Login = () => {
     fetch("http://127.0.0.1:8000/loginuser/", requestOptions)
       .then(response => response.json())
       .then((result) => {
+        // console.log('result--',typeof result);
         if(result.status === true){
           setLogin = true;
         }
