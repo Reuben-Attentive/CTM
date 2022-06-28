@@ -1,0 +1,30 @@
+{
+    "data" :[
+    {
+        "module_id": "M1",
+        "module_name": "Commercial Landscaping",
+        "module_description": "The game of accuracy.",
+        "module_imageUrl": "https://picsum.photos/200",
+        "module_demoUrl": "https://picsum.photos/200",
+        "module_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s .",
+        "module_sampleUrl": "https://picsum.photos/200"
+    },
+    {
+        "module_id": "M2",
+        "module_name": "Residential Landscaping",
+        "module_description": "The game of speed.",
+        "module_imageUrl": "https://picsum.photos/200",
+        "module_demoUrl": "https://picsum.photos/200",
+        "module_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s .",
+        "module_sampleUrl": "https://picsum.photos/200"
+    },
+    {
+        "module_id": "M3",
+        "module_name": "Rapid Fire (One Carto)",
+        "module_description": "he game to beat.",
+        "module_imageUrl": "https://picsum.photos/200",
+        "module_demoUrl": "https://picsum.photos/200",
+        "module_text": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s .",
+        "module_sampleUrl": "https://picsum.photos/200"
+    }
+]}

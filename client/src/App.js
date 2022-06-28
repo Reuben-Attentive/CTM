@@ -7,6 +7,7 @@ function App() {
   const [appStore, appStoreDispatch] = useContext(AppContext);
 
   return (
+    
     <div className="App">
       {appStore.isLoggedIn ? <MainPage /> : <Login />}
     </div>
