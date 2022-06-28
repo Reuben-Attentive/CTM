@@ -12,7 +12,9 @@ const MainPage = () => {
         <Route path='/' exact element={<Home/>} />
         <Route path='/:module/' exact element={<Module/>}/>
         <Route path='/:module/tutorial' exact element={<Tutorial/>}/>
-        <Route path="*" element={<Navigate to="/" replace />} />
+        {/*path="*" means for any path other than above specified path goes to home */}
+        <Route path="*" element={<Navigate to="/" replace />} /> 
+
       </Routes>
     </Router>
   );

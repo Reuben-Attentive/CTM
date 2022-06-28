@@ -44,8 +44,8 @@ const Tutorial = (props) => {
           </div>
 
           <Layout>
-            <Sider className = "chapter-sider" collapsible collapsed={collapsedSecond} onCollapse={(value) => setCollapsedSecond(value)}>
-              <ChapterContent collapsed = {collapsedSecond}/>
+            <Sider className = "chapter-sider" trigger={null} collapsible collapsed={collapsedSecond} >
+              <ChapterContent setCollapsed={setCollapsedSecond} collapsed = {collapsedSecond}/>
             </Sider>
             <Content>
               <div className="site-layout-second">
