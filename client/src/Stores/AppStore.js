@@ -11,6 +11,18 @@ const INITIAL_STATE = {
   isLoggedIn: Boolean(token),
 };
 
+//appStoreDispatch({ 
+  //type: 'SET_LOGIN', 
+  //payload:{
+  //        isLoggedIn: true, 
+  //        user: {
+    //              token: 'token', 
+//                  username: username, 
+//                  id: username
+//                } 
+//          }
+// });
+
 const appReducer = (state, action) => {
   switch (action.type) {
     case 'SET_LOGIN':
