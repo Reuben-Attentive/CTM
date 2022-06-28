@@ -38,7 +38,7 @@ const HeaderContent = () => {
   return(
     <Row>
       <div className='left'>
-        <a href='https://attentive.ai/'>
+        <a href='/'>
           <img src='/img/logo-white.svg' alt='Attentive Logo' />
         </a>
       </div>

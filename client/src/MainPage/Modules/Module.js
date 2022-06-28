@@ -1,19 +1,19 @@
 import { useParams } from "react-router-dom";
-import React, { useContext } from 'react';
-import { Layout, Button, Row, Col, Breadcrumb} from 'antd';
+import { Layout, Button, Row, Col, Breadcrumb, Carousel} from 'antd';
 import { HomeOutlined } from '@ant-design/icons';
-import { AppContext } from '../../Stores/AppStore';
 import HeaderContent from "../Components/HeaderContent";
 import FooterContent from "../Components/FooterContent";
 
 const { Header, Content, Footer } = Layout;
 
-const DataModel = (props) => {
+const Module = (props) => {
   const {module} = useParams();
-  const [appStore, appStoreDispatch] = useContext(AppContext);
-
-  const onLogout = (values) => {
-    appStoreDispatch({ type: 'SET_LOGOUT', payload: { isLoggedIn: false, token: '' } });
+  const contentStyle = {
+    height: '500px',
+    color: '#fff',
+    lineHeight: '160px',
+    textAlign: 'center',
+    background: '#364d79',
   };
 
   return(
@@ -25,21 +25,24 @@ const DataModel = (props) => {
         <div className="site-layout-content">
           <Breadcrumb>
             <Breadcrumb.Item href = "/"><HomeOutlined /></Breadcrumb.Item>
+            <Breadcrumb.Item>My games</Breadcrumb.Item>
             <Breadcrumb.Item>{module}</Breadcrumb.Item>
           </Breadcrumb>
+          <br></br>
+          <br></br>
           <Row justify="space-around" align="middle">
             <Col span = {4}>
-              <Button type="primary" htmlType="submit">
+              <Button type="primary" htmlType="submit" className="green-button" href = {`/${module}/tutorial`}>
                 Tutorial
               </Button>
             </Col>
             <Col span = {4}>
-              <Button type="primary" htmlType="submit">
+              <Button type="primary" htmlType="submit" disabled>
                 Practice Arena
               </Button>
             </Col>
             <Col span = {4}>
-              <Button type="primary" htmlType="submit">
+              <Button type="primary" htmlType="submit" disabled>
                 Boss Fight
               </Button>
             </Col>
@@ -56,7 +59,21 @@ const DataModel = (props) => {
           </Col>
           <Col span = {2}></Col>
           <Col span = {11}>
-            <img src = "/img/background.png" alt = "background" style = {{ maxWidth: '100%', maxHeight: 'auto'}}/>
+            {/* <img src = "/img/background.png" alt = "background" style = {{ maxWidth: '100%', maxHeight: 'auto'}}/> */}
+            <Carousel effect="fade" autoplay>
+              <div>
+                <h3 style={contentStyle}>1</h3>
+              </div>
+              <div>
+                <h3 style={contentStyle}>2</h3>
+              </div>
+              <div>
+                <h3 style={contentStyle}>3</h3>
+              </div>
+              <div>
+                <h3 style={contentStyle}>4</h3>
+              </div>
+            </Carousel>
           </Col>
         </Row>
         </div>
@@ -68,4 +85,4 @@ const DataModel = (props) => {
   );
 }
 
-export default DataModel;
+export default Module;

@@ -32,7 +32,7 @@ const Home = () => {
                       lg={{
                         span: 8,
                       }}  key = {index}>
-                      <a href={`/${item.module}/data-model`}>
+                      <a href={`/${item.module}/`}>
                         <Card type="inner" title = {item["module-name"]} bodyStyle={{padding: "0", alignContent: "center"}}>
                           <img src = "/img/background.png" alt = "background" style = {{ maxWidth: '100%', maxHeight: 'auto'}}/>
                           <br></br> <br></br>
