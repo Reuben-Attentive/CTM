@@ -1,12 +1,13 @@
 import { Menu } from 'antd';
 import { BarChartOutlined, MessageOutlined,UserOutlined, HomeOutlined, LogoutOutlined } from '@ant-design/icons';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
-// import { Icon } from 'semantic-ui-react';
+import { AppContext } from '../../Stores/AppStore';
 
 const SiderContent = (props) => {
   const collapsed = props.collapsed;
   const location = useLocation();
+  const [appStore, appStoreDispatch] = useContext(AppContext);
   const [activeKey] = useState(location.pathname === '/stats' ? ['2'] : ['1']);
 
   function getItem(label, key, icon, children) {
@@ -25,6 +26,10 @@ const SiderContent = (props) => {
     if(key === '2'){
       window.location = '/leaderboard';
     }
+
+    if(key === '5'){
+      appStoreDispatch({ type: 'SET_LOGOUT', payload: { isLoggedIn: false, token: '' } });
+    }
   }
 
   const items = [
@@ -32,13 +37,11 @@ const SiderContent = (props) => {
     getItem('Leaderboard', '2', <BarChartOutlined />),
     getItem('Feedback', '3', <MessageOutlined />),
   ];
+
   const items2 = [
-
-    getItem('Profile', '2', <UserOutlined />),
-    getItem('Logout', '3', <LogoutOutlined />),
+    getItem('Profile', '4', <UserOutlined />),
+    getItem('Logout', '5', <LogoutOutlined />),
   ];
-
-
 
   return(
     <div>

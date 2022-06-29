@@ -40,7 +40,6 @@ const Home = () => {
             <h2>FX Training Module</h2>
             <Row gutter={16}>
               {moduleData.map((item, index) => {
-
                 return (
                   <Col
                     xs={{
@@ -54,7 +53,7 @@ const Home = () => {
                     }}
                     key={index}
                   >
-                    <a href={`/${item.module}/data-model`}>
+                    <a href={`/${item.module_name}/`}>
                       <Card
                         type="inner"
                         title={item["module_name"]}

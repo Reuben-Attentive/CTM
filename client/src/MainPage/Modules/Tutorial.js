@@ -10,7 +10,7 @@ const { Content, Sider, Footer } = Layout;
 const Tutorial = (props) => {
   const { module } = useParams();
   const [collapsed, setCollapsed] = useState(true);
-  const [collapsedSecond, setCollapsedSecond] = useState(true);
+  const [collapsedSecond, setCollapsedSecond] = useState(false);
 
   const [showVideo, setShowVideo] = useState(true);
   const [showPdf, setShowPdf] = useState(true);
@@ -38,7 +38,7 @@ const Tutorial = (props) => {
           <div style={{ padding: "2vw 2vw 0 2vw" }}>
             <Breadcrumb>
               <Breadcrumb.Item href="/">My games</Breadcrumb.Item>
-              <Breadcrumb.Item href="/">{module} Landscaping</Breadcrumb.Item>
+              <Breadcrumb.Item href="/">{module}</Breadcrumb.Item>
               <Breadcrumb.Item href="/">Tutorial</Breadcrumb.Item>
             </Breadcrumb>
             <br></br>

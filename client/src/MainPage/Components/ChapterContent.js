@@ -1,6 +1,5 @@
 import { Menu, Button } from "antd";
 import { ArrowRightOutlined, ArrowLeftOutlined } from "@ant-design/icons";
-
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -19,8 +18,6 @@ const ChapterContent = (props) => {
   const location = useLocation();
   // const [activeKey] = useState(location.pathname === '/stats' ? ['2'] : ['1']);
 
-
-
   function itemOnClick({ item, key, keyPath, domEvent }) {
     console.log("item", item);
     console.log("key", key);
@@ -33,7 +30,7 @@ const ChapterContent = (props) => {
         console.log('key',key);
       
     chapterItems.forEach((item)=>{
-      if(key ==item.key ){
+      if(key === item.key ){
         setChapterHeading(item.label)
         // console.log('chapterHeading',chapterHeading);
       }
@@ -53,8 +50,6 @@ const ChapterContent = (props) => {
   });
 
   console.log('chapterItems',chapterItems);
-
- 
 
   return (
     <div>
@@ -94,6 +89,7 @@ const ChapterContent = (props) => {
         className="chapter-sider"
         mode="inline"
         items={collapsed ? "" : chapterItems}
+        defaultSelectedKeys ='1'
         onClick={itemOnClick}
       />
     </div>
