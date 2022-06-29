@@ -1,4 +1,5 @@
 import { Menu } from 'antd';
+
 import { BarChartOutlined, MessageOutlined,UserOutlined, HomeOutlined, LogoutOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -43,13 +44,13 @@ const SiderContent = (props) => {
   return(
     <div>
       <div className ="top-spacing" style={{height: 'calc(8vh - 4px)', alignItems: 'center',  textAlign: 'center' }}>
-        <h1 style = {{color: '#fff', margin: 0, padding: '4px 0 0 0'}}>{collapsed ? ' ' : 'Carto Training'}</h1>
-        <h1 style = {{color: '#fff', margin: 0}}>{collapsed? 'CTM': 'Module'}</h1>
+        {/* <h1 style = {{color: '#fff', margin: 0, padding: '4px 0 0 0'}}>{collapsed ? ' ' : 'Carto Training'}</h1> */}
+        <h1 style = {{color: '#fff', margin: 0}}>logo</h1>
       </div>
       <div className='side-navbar-menu'>
       <i class="fa-regular fa-gamepad-modern"></i>
-      <Menu theme="dark" selectedKeys={activeKey} mode="inline" items={items} onClick= {itemOnClick}/>
-      <Menu className='side-navbar-lowermenu' theme="dark" selectedKeys={activeKey} mode="inline" items={items2} onClick= {itemOnClick}/>
+      <Menu style={{background: "#212121"}} theme="dark" selectedKeys={activeKey} mode="inline" items={items} onClick= {itemOnClick}/>
+      <Menu style={{background: "#212121"}} className='side-navbar-lowermenu' theme="dark" selectedKeys={activeKey} mode="inline" items={items2} onClick= {itemOnClick}/>
       </div>
 
     </div> 

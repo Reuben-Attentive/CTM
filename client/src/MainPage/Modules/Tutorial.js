@@ -13,7 +13,7 @@ const Tutorial = (props) => {
 
   return (
     <Layout style={{ minHeight: "100vh", maxHeight: "100vh" }}>
-      <Sider collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+      <Sider style={{background: "#212121"}} collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
         <SiderContent collapsed={collapsed} />
       </Sider>
       <Layout>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Menu, Button, Layout, Checkbox, Row, Col, Breadcrumb } from "antd";
+import { Menu, Button, Layout, Checkbox, Row, Col, Progress } from "antd";
 import { ArrowRightOutlined, ArrowLeftOutlined } from "@ant-design/icons";
 
 import { useLocation } from "react-router-dom";
@@ -56,7 +56,7 @@ const ChapterContent = (props) => {
   ChapterDummyData.forEach((chapter) => {
     chapterItems.push({
       key: chapter.chapter_number,
-      label: "chapter" + chapter.chapter_number + ": " + chapter.chapter_name,
+      label: "chapter " + chapter.chapter_number + " : " + chapter.chapter_name,
     });
   });
 
@@ -102,6 +102,11 @@ const ChapterContent = (props) => {
               size={50}
             />
           </div>
+          <div style={{marginLeft: 20, marginTop: 10}}>
+          {collapsed ? "" : <Progress strokeColor="#4CBB7F" trailColor="#E2E2E2" percent={40} />}
+          
+          </div>
+          
           {/* <Menu className = "chapter-sider" selectedKeys={activeKey} mode="inline" items={collapsed ? '' : items} onClick= {itemOnClick}/> */}
           <Menu
             className="chapter-sider"

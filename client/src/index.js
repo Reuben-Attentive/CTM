@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './Styles/style.css';
+// import './Styles/style.css';
+import './Styles/App.less';
 import App from './App';
 import { AppContextProvider } from './Stores/AppStore';
 
