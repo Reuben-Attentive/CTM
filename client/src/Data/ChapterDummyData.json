@@ -1,0 +1,26 @@
+
+[    { 
+       "chapter_number" : 1,
+        "chapter_name" : "introduction",
+        "chapter_pdfURL":"http://africau.edu/images/default/sample.pdf",
+        "chapter_videoURL":"https://drive.google.com/file/d/0B9XzsMuZIc4iLV9mYjV3a3JadTQ/preview"
+    },
+    { 
+        "chapter_number" : 2,
+         "chapter_name" : "chapter-2",
+         "chapter_pdfURL":"https://www.clickdimensions.com/links/TestPDFfile.pdf",
+         "chapter_videoURL":"https://www.youtube.com/embed/tgbNymZ7vqY"
+     },
+     { 
+        "chapter_number" : 3,
+         "chapter_name" : "chapter-3",
+         "chapter_pdfURL":"https://www.orimi.com/pdf-test.pdf",
+         "chapter_videoURL":"https://www.youtube.com/embed/5Eqb_-j3FDA/"
+     },
+     { 
+        "chapter_number" : 4,
+         "chapter_name" : "chapter-4",
+         "chapter_pdfURL":"https://www.clickdimensions.com/links/TestPDFfile.pdf",
+         "chapter_videoURL":"https://www.youtube.com/embed/tgbNymZ7vqY"
+     }
+]
