@@ -9,7 +9,7 @@ const { Header, Content, Footer } = Layout;
 const Module = (props) => {
   const {module} = useParams();
   const contentStyle = {
-    height: '500px',
+    height: '400px',
     color: '#fff',
     lineHeight: '160px',
     textAlign: 'center',
@@ -50,16 +50,15 @@ const Module = (props) => {
           <br></br>
           <br></br>
           <Row>
-          <Col span = {11}>
+          <Col span = {12}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mollis enim sit amet justo pharetra consequat. Phasellus nec odio sit amet ligula vehicula mollis sed nec lorem. Quisque lorem risus, vehicula ac ultrices a, euismod in nisl. Phasellus lobortis pretium eros eu eleifend. Aenean efficitur velit vel felis mattis volutpat. Aenean tincidunt vestibulum auctor. Sed ullamcorper malesuada risus blandit fermentum. Phasellus congue ipsum at fermentum luctus. Aenean est risus, mattis posuere sagittis quis, condimentum imperdiet magna. Mauris ornare mauris sed nisi sollicitudin, et finibus arcu fermentum. Suspendisse eget tortor imperdiet, condimentum tortor sed, rutrum turpis. Proin vitae risus tincidunt, porttitor arcu non, volutpat magna. Suspendisse aliquam eros odio, eu egestas metus gravida nec. Donec lacinia scelerisque eros, sit amet congue ipsum condimentum ac. Suspendisse id enim eget quam lobortis finibus quis et justo.
             <br></br><br></br>
-            Cras ultricies tortor enim, a tincidunt neque auctor vitae. Proin eget nulla sit amet purus ullamcorper feugiat. Curabitur ullamcorper libero eget odio varius, id congue mauris convallis. Nunc consequat tincidunt nisi ac ornare. Sed suscipit faucibus interdum. Sed quis orci felis. Curabitur et volutpat nunc. Suspendisse potenti. Maecenas eget fringilla orci. Aenean sodales urna nec tristique commodo. Duis vestibulum, mi aliquet pharetra fermentum, libero risus iaculis nisi, fermentum ultricies urna purus in ante.
-            <br></br><br></br>
-            Cras ultricies tortor enim, a tincidunt neque auctor vitae. Proin eget nulla sit amet purus ullamcorper feugiat. Curabitur ullamcorper libero eget odio varius, id congue mauris convallis. Nunc consequat tincidunt nisi ac ornare. Sed suscipit faucibus interdum. Sed quis orci felis. Curabitur et volutpat nunc. Suspendisse potenti. Maecenas eget fringilla orci. Aenean sodales urna nec tristique commodo. Duis vestibulum, mi aliquet pharetra fermentum, libero risus iaculis nisi, fermentum ultricies urna purus in ante.
+            Cras ultricies tortor enim, a tincidunt neque auctor vitae. Proin eget nulla sit amet purus ullamcorper feugiat. Curabitur ullamcorper libero eget odio varius, id congue mauris convallis. Nunc consequat tincidunt nisi ac ornare. Sed suscipit faucibus interdum. Sed quis orci felis. Curabitur et volutpat nunc. Suspendisse potenti. Maecenas eget fringilla orci. Aenean sodales urna nec tristique commodo. 
+            Cras ultricies tortor enim, a tincidunt neque auctor vitae. Proin eget nulla sit amet purus ullamcorper feugiat. Curabitur ullamcorper libero eget odio varius, id congue mauris convallis. Nunc consequat tincidunt nisi ac ornare. Sed suscipit faucibus interdum. Sed quis orci felis. Curabitur et volutpat nunc. Suspendisse potenti. Maecenas eget fringilla orci. Aenean sodales urna nec tristique commodo. 
           </Col>
-          <Col span = {2}></Col>
+          <Col span = {1}></Col>
           <Col span = {11}>
-            {/* <img src = "/img/background.png" alt = "background" style = {{ maxWidth: '100%', maxHeight: 'auto'}}/> */}
+            {/* Slideshow of shareable links */}
             <Carousel effect="fade" autoplay>
               <div>
                 <h3 style={contentStyle}>1</h3>
