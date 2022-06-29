@@ -42,7 +42,7 @@ const Tutorial = (props) => {
               <Breadcrumb.Item href="/">Tutorial</Breadcrumb.Item>
             </Breadcrumb>
             <br></br>
-            <h1>Tutorials</h1>
+            <h1>Tutorials </h1>
           </div>
 
           <Layout>
@@ -69,6 +69,7 @@ const Tutorial = (props) => {
                   <Col span={12}>
                     {/* <h1>Chapter 1: Introduction</h1> */}
                     <h1>{chapterHeading}</h1>
+                    
                   </Col>
                   <Col span={2}>View</Col>
                   <Col span={4}>
