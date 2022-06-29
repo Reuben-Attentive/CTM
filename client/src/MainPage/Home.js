@@ -54,7 +54,7 @@ const Home = () => {
                     }}
                     key={index}
                   >
-                    <a href={`/${item.module}/data-model`}>
+                    <a href={`/${item.module_name}`}>
                       <Card
                         type="inner"
                         title={item["module_name"]}

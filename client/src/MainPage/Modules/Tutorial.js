@@ -10,23 +10,6 @@ const { Content, Sider, Footer } = Layout;
 const Tutorial = (props) => {
   const { module } = useParams();
   const [collapsed, setCollapsed] = useState(true);
-  const [collapsedSecond, setCollapsedSecond] = useState(true);
-
-  const [showVideo, setShowVideo] = useState(true);
-  const [showPdf, setShowPdf] = useState(true);
-  const [videoURL, setVideoURL] = useState("");
-  const [pdfURL, setPdfURL] = useState("");
-  const [chapterHeading, setChapterHeading] = useState("");
-  const onVideoChange = (e) => {
-    console.log(`checked = ${e.target.checked}`);
-    setShowVideo(!showVideo);
-    console.log(showVideo);
-  };
-
-  const onPdfChange = (e) => {
-    console.log(`checked = ${e.target.checked}`);
-    setShowPdf(!showPdf);
-  };
 
   return (
     <Layout style={{ minHeight: "100vh", maxHeight: "100vh" }}>
@@ -35,98 +18,22 @@ const Tutorial = (props) => {
       </Sider>
       <Layout>
         <Content className="site-layout-first">
-          <div style={{ padding: "2vw 2vw 0 2vw" }}>
+          <div style={{ padding: "2vw 2vw 0 1vw" }}>
             <Breadcrumb>
               <Breadcrumb.Item href="/">My games</Breadcrumb.Item>
-              <Breadcrumb.Item href="/">{module} Landscaping</Breadcrumb.Item>
+              <Breadcrumb.Item href="/">{module} </Breadcrumb.Item>
               <Breadcrumb.Item href="/">Tutorial</Breadcrumb.Item>
             </Breadcrumb>
             <br></br>
-            <h1>Tutorials </h1>
+            <div style={{boxShadow: "0px 3px 16px #00000015", height: 80 , display:"flex",justifyContent:"space-between",alignItems:"center"}}>
+            <p style={{ fontSize:"x-large",fontWeight:600, margin: 0}}>Tutorials </p>
+            <Button style={{ width: 136 }} type="primary" size="normal">Demo</Button>
+
+            </div>
           </div>
 
           <Layout>
-            <Sider
-              className="chapter-sider"
-              trigger={null}
-              collapsible
-              collapsed={collapsedSecond}
-            >
-              <ChapterContent
-              setChapterHeading={setChapterHeading}
-              chapterHeading={chapterHeading}
-                videoURL={videoURL}
-                setVideoURL={setVideoURL}
-                pdfURL={pdfURL}
-                setPdfURL={setPdfURL}
-                setCollapsed={setCollapsedSecond}
-                collapsed={collapsedSecond}
-              />
-            </Sider>
-            <Content>
-              <div className="site-layout-second">
-                <Row>
-                  <Col span={12}>
-                    {/* <h1>Chapter 1: Introduction</h1> */}
-                    <h1>{chapterHeading}</h1>
-                    
-                  </Col>
-                  <Col span={2}>View</Col>
-                  <Col span={4}>
-                    <Checkbox
-                      onChange={onVideoChange}
-                      defaultChecked={showVideo}
-                    >
-                      Video
-                    </Checkbox>
-                  </Col>
-                  <Col span={4}>
-                    <Checkbox onChange={onPdfChange} defaultChecked={showPdf}>
-                      Pdf
-                    </Checkbox>
-                  </Col>
-                </Row>
-                <Row style={{ minHeight: "65vh" }}>
-                  <Col
-                    span={showVideo && showPdf ? 14 : 24}
-                    style={{ display: showVideo ? "block" : "none" }}
-                  >
-                    <div
-                      className="video-responsive"
-                      style={{
-                        height: showVideo && showPdf ? "450px" : "500px",
-                        width: showVideo && showPdf ? "700px" : "850px",
-                      }}
-                    >
-                      <iframe
-                        src={videoURL}
-                        title="Chapter Video"
-                        frameBorder={0}
-                      ></iframe>
-                    </div>
-                  </Col>
-                  <Col
-                    span={showVideo && showPdf ? 10 : 24}
-                    style={{ display: showPdf ? "block" : "none" }}
-                  >
-                    <object
-                      // data="http://africau.edu/images/default/sample.pdf"
-                      data={pdfURL}
-                      type="application/pdf"
-                      width="100%"
-                      height="100%"
-                    >
-                      <p>
-                        Alternative text - include a link{" "}
-                        <a href="http://africau.edu/images/default/sample.pdf">
-                          to the PDF!
-                        </a>
-                      </p>
-                    </object>
-                  </Col>
-                </Row>
-              </div>
-            </Content>
+            <ChapterContent />
           </Layout>
         </Content>
         <Footer
