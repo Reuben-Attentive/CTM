@@ -18,9 +18,9 @@ const Module = (props) => {
 
   return(
     <Layout className="layout">
-      <Header style={{height: '8vh'}}>
+      
         <HeaderContent/>
-      </Header>
+      
       <Content>
         <div className="site-layout-content">
           <Breadcrumb>
