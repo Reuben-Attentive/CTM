@@ -9,13 +9,11 @@ const { Content, Sider, Footer } = Layout;
 
 const Tutorial = () => {
   const { module } = useParams();
-  const [collapsed, setCollapsed] = useState(true);
+  
 
   return (
     <Layout style={{ minHeight: "100vh", maxHeight: "100vh" }}>
-      <Sider style={{background: "#212121"}} collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-        <SiderContent collapsed={collapsed} />
-      </Sider>
+        <SiderContent  />
       <Layout>
         <Content className="site-layout-first">
           <div style={{ padding: "2vw 2vw 0 1vw" }}>
