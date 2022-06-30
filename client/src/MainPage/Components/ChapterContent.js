@@ -1,18 +1,16 @@
 import { useState } from "react";
 import { Menu, Button, Layout, Checkbox, Row, Col, Progress } from "antd";
 import { ArrowRightOutlined, ArrowLeftOutlined } from "@ant-design/icons";
-const { Content, Sider} = Layout;
+const { Content, Sider } = Layout;
 
 const ChapterContent = () => {
   const ChapterDummyData = require("../../Data/ChapterDummyData.json");
   const [collapsed, setCollapsed] = useState(false);
   const [showVideo, setShowVideo] = useState(true);
-  const [showPdf, setShowPdf] = useState(true);
-  const [videoURL, setVideoURL] = useState(
-    ChapterDummyData[0].chapter_videoURL
-  );
+  const [showPdf, setShowPdf] = useState(false);
+  const [videoURL, setVideoURL] = useState(ChapterDummyData[0].chapter_videoURL);
   const [pdfURL, setPdfURL] = useState(ChapterDummyData[0].chapter_pdfURL);
-  const [chapterHeading, setChapterHeading] = useState("");
+  const [chapterHeading, setChapterHeading] = useState("Chapter 1 : "+ChapterDummyData[0].chapter_name);
 
   const onVideoChange = (e) => {
     console.log(`checked = ${e.target.checked}`);
@@ -26,13 +24,15 @@ const ChapterContent = () => {
   };
 
   function itemOnClick({ item, key, keyPath, domEvent }) {
+    
     ChapterDummyData.forEach((chapter) => {
-      if (key === chapter.chapter_number) {
+      if (key == chapter.chapter_number) {
         setPdfURL(chapter.chapter_pdfURL);
         setVideoURL(chapter.chapter_videoURL);
-        console.log("key", key);
+        console.log(chapter.chapter_pdfURL);
+        
         chapterItems.forEach((item) => {
-          if (key === item.key) {
+          if (key == item.key) {
             setChapterHeading(item.label);
           }
         });
@@ -47,44 +47,79 @@ const ChapterContent = () => {
       label: "chapter " + chapter.chapter_number + " : " + chapter.chapter_name,
     });
   });
+console.log('chapterItems',chapterItems);
+console.log('ChapterDummyData',ChapterDummyData);
 
   return (
     <Layout>
-      <Sider className="chapter-sider" trigger={null} collapsible collapsed={collapsed}>
+      <Sider
+        className="chapter-sider"
+        trigger={null}
+        collapsible
+        collapsed={collapsed}
+      >
         <div>
-          <div className="top-spacing"
+          <div
+            className="top-spacing"
             style={{
               height: "calc(8vh - 4px)",
               alignItems: "center",
               textAlign: "center",
               display: "flex",
               justifyContent: "space-around",
-            }}>
-            <h1 style={{
-              color: "#212121",
-              fontSize: "medium",
-              margin: 0,
-              padding: "4px 0 0 0",
-            }}>
+            }}
+          >
+            <h1
+              style={{
+                color: "#212121",
+                fontSize: "medium",
+                margin: 0,
+                padding: "4px 0 0 0",
+              }}
+            >
               {collapsed ? "" : "Chapter List"}
             </h1>
-            <Button style={{ background: "#4CBB7F" }} onClick={() => {setCollapsed(!collapsed);}}
+            <Button
+              style={{ background: "#4CBB7F" }}
+              onClick={() => {
+                setCollapsed(!collapsed);
+              }}
               type="primary"
               shape="circle"
               icon={collapsed ? <ArrowRightOutlined /> : <ArrowLeftOutlined />}
-              size={50}/>
+              size={50}
+            />
           </div>
-          <div style={{marginLeft: 20, marginTop: 10}}>
-            {collapsed ? "" : <Progress strokeColor="#4CBB7F" trailColor="#E2E2E2" percent={40} />}
+          <div style={{ marginLeft: 20, marginTop: 10 }}>
+            {collapsed ? (
+              ""
+            ) : (
+              <Progress
+                strokeColor="#4CBB7F"
+                trailColor="#E2E2E2"
+                percent={40}
+              />
+            )}
           </div>
-          <Menu className="chapter-sider" mode="inline" defaultSelectedKeys={["1"]} items={collapsed ? "" : chapterItems} onClick={itemOnClick}/>
+          <Menu
+            className="chapter-sider"
+            mode="inline"
+            defaultSelectedKeys={["1"]}
+            items={collapsed ? "" : chapterItems}
+            onClick={itemOnClick}
+          />
         </div>
       </Sider>
       <Content>
         <div className="site-layout-second">
-          <Row>
+          <Row style={{marginBottom : 10 }}>
             <Col span={12}>
-              <h1>{chapterHeading}</h1>
+              <h1
+              style={{
+                color: "#212121",
+                fontSize: "medium",
+                margin: 0,}}>
+              {chapterHeading}</h1>
             </Col>
             <Col span={2}>View</Col>
             <Col span={4}>
@@ -99,18 +134,40 @@ const ChapterContent = () => {
             </Col>
           </Row>
           <Row style={{ minHeight: "65vh" }}>
-            <Col span={showVideo && showPdf ? 14 : 24} style={{ display: showVideo ? "block" : "none" }}>
-              <div className="video-responsive" style={{
-                height: showVideo && showPdf ? "450px" : "500px",
-                width: showVideo && showPdf ? "660px" : "850px",
-              }}>
-                <iframe src={videoURL} title="Chapter Video" frameBorder={0}></iframe>
+            <Col
+              span={showVideo && showPdf ? 14 : 24}
+              style={{ display: showVideo ? "block" : "none" }}
+            >
+              <div
+                className="video-responsive"
+                style={{
+                  height: showVideo && showPdf ? "450px" : "500px",
+                  width: showVideo && showPdf ? "660px" : "850px",
+                }}
+              >
+                <iframe
+                  src={videoURL}
+                  title="Chapter Video"
+                  frameBorder={0}
+                ></iframe>
               </div>
             </Col>
-            <Col span={showVideo && showPdf ? 10 : 24} style={{ display: showPdf ? "block" : "none" }}>
-              <object data={pdfURL} type="application/pdf" width="100%" height="100%">
+            <Col
+              span={showVideo && showPdf ? 10 : 24}
+              style={{ display: showPdf ? "block" : "none" }}
+            >
+              <object
+                data={pdfURL}
+                type="application/pdf"
+                width="100%"
+                height="100%"
+              >
                 <p>
-                  Alternative text - include a link{" "} <a href="http://africau.edu/images/default/sample.pdf"> to the PDF!</a>
+                  Alternative text - include a link{" "}
+                  <a href="http://africau.edu/images/default/sample.pdf">
+                    {" "}
+                    to the PDF!
+                  </a>
                 </p>
               </object>
             </Col>

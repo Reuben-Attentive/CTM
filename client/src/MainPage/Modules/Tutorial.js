@@ -25,7 +25,7 @@ const Tutorial = () => {
               <Breadcrumb.Item href="/">Tutorial</Breadcrumb.Item>
             </Breadcrumb>
             <br></br>
-            <div style={{boxShadow: "0px 3px 16px #00000015", height: 80 , display:"flex", justifyContent:"space-between", alignItems:"center"}}>
+            <div style={{ height: 80 , display:"flex", justifyContent:"space-between", alignItems:"center"}}>
               <p style={{ fontSize:"x-large",fontWeight:600, margin: 0}}>Tutorials </p>
               <a href = "/Residential%20Landscaping/tutorial/demo" target = "_blank"><Button style={{ width: 136 }} type="primary" size="normal">Demo</Button></a>
             </div>
