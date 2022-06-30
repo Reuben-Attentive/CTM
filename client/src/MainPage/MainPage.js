@@ -4,14 +4,18 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from './Home';
 import Module from './Modules/Module';
 import Tutorial from './Modules/Tutorial';
+import Demo from './Modules/Demo';
+import Performance from './Performance/Performance';
 
 const MainPage = () => {
   return (
     <Router>
       <Routes>
-        <Route path='/' exact element={<Home/>} />
-        <Route path='/:module/' exact element={<Module/>}/>
-        <Route path='/:module/tutorial' exact element={<Tutorial/>}/>
+        <Route path='/' element={<Home/>} />
+        <Route path='/:module/' element={<Module/>}/>
+        <Route path='/:module/tutorial' element={<Tutorial/>}/>
+        <Route path='/:module/tutorial/demo' element={<Demo/>}/>
+        <Route path='/:module/practice-mode/performance' element={<Performance/>}/>
         {/*path="*" means for any path other than above specified path goes to home */}
         <Route path="*" element={<Navigate to="/" replace />} /> 
 
