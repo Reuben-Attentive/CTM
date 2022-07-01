@@ -61,7 +61,9 @@ const HeaderContent = () => {
             <UserOutlined
               style={{
                 color: "white",
+                paddingTop: 10,
                 background: "#4CBB7F",
+                fontSize:24,
                 height: 50,
                 width: 50,
                 borderRadius: "50%",
