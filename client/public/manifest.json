@@ -1,9 +1,10 @@
 {
   "short_name": "FX Training Module",
   "name": "FX Training Module",
+  "author": "Reuben Devanesan | Hariansh Sehgal",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "Attentive Logo",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }

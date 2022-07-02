@@ -6,10 +6,9 @@ import { AppContext } from '../Stores/AppStore';
 const { Header, Content, Footer } = Layout;
 
 const Login = () => {
-  const [appStore, appStoreDispatch] = useContext(AppContext);
+  const [, appStoreDispatch] = useContext(AppContext);
 
   const onFinish = (values) => {
-    console.log('Received values of form: ', values);
     const username = values.username.trim();
     const password = values.password.trim();
     var myHeaders = new Headers();
@@ -31,7 +30,6 @@ const Login = () => {
     fetch("http://127.0.0.1:8000/loginuser/", requestOptions)
       .then(response => response.json())
       .then((result) => {
-        // console.log('result--',typeof result);
         if(result.status === true){
           setLogin = true;
         }

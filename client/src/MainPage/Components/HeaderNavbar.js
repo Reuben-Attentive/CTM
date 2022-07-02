@@ -10,7 +10,7 @@ const HeaderNavbar = () => {
   const onLogout = () => {
     appStoreDispatch({
       type: "SET_LOGOUT",
-      payload: { isLoggedIn: false, token: "" },
+      payload: { isLoggedIn: false },
     });
   };
 

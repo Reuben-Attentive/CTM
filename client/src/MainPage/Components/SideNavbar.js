@@ -29,7 +29,7 @@ const SideNavbar = () => {
     }
 
     if(key === '5'){
-      appStoreDispatch({ type: 'SET_LOGOUT', payload: { isLoggedIn: false, token: '' } });
+      appStoreDispatch({ type: 'SET_LOGOUT', payload: { isLoggedIn: false } });
     }
   }
 
