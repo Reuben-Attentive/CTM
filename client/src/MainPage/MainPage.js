@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
+//Pages
 import Home from './Home';
 import Module from './Modules/Module';
 import Tutorial from './Modules/Tutorial';
-import Demo from './Modules/Demo';
-import Performance from './Performance/Performance';
+import Feedback from './Modules/Feedback';
+import Performance from './Modules/Performance';
 
 const MainPage = () => {
   return (
@@ -14,11 +15,9 @@ const MainPage = () => {
         <Route path='/' element={<Home/>} />
         <Route path='/:module/' element={<Module/>}/>
         <Route path='/:module/tutorial' element={<Tutorial/>}/>
-        <Route path='/:module/tutorial/demo' element={<Demo/>}/>
         <Route path='/:module/practice-mode/performance' element={<Performance/>}/>
-        {/*path="*" means for any path other than above specified path goes to home */}
+        <Route path='/feedback/:module/' element={<Feedback/>}/>
         <Route path="*" element={<Navigate to="/" replace />} /> 
-
       </Routes>
     </Router>
   );

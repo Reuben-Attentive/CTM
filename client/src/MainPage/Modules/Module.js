@@ -1,12 +1,11 @@
 import { useParams } from "react-router-dom";
 import { Layout, Button, Row, Col, Breadcrumb, Carousel} from 'antd';
 import { HomeOutlined } from '@ant-design/icons';
-import HeaderContent from "../Components/HeaderContent";
-import FooterContent from "../Components/FooterContent";
+import HeaderNavbar from "../Components/HeaderNavbar";
+import FooterBar from "../Components/FooterBar";
+const { Content } = Layout;
 
-const { Header, Content, Footer } = Layout;
-
-const Module = (props) => {
+const Module = () => {
   const {module} = useParams();
   const contentStyle = {
     height: '400px',
@@ -18,9 +17,7 @@ const Module = (props) => {
 
   return(
     <Layout className="layout">
-      <Header style={{height: '8vh'}}>
-        <HeaderContent/>
-      </Header>
+      <HeaderNavbar/>
       <Content>
         <div className="site-layout-content">
           <Breadcrumb>
@@ -50,36 +47,34 @@ const Module = (props) => {
           <br></br>
           <br></br>
           <Row>
-          <Col span = {12}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mollis enim sit amet justo pharetra consequat. Phasellus nec odio sit amet ligula vehicula mollis sed nec lorem. Quisque lorem risus, vehicula ac ultrices a, euismod in nisl. Phasellus lobortis pretium eros eu eleifend. Aenean efficitur velit vel felis mattis volutpat. Aenean tincidunt vestibulum auctor. Sed ullamcorper malesuada risus blandit fermentum. Phasellus congue ipsum at fermentum luctus. Aenean est risus, mattis posuere sagittis quis, condimentum imperdiet magna. Mauris ornare mauris sed nisi sollicitudin, et finibus arcu fermentum. Suspendisse eget tortor imperdiet, condimentum tortor sed, rutrum turpis. Proin vitae risus tincidunt, porttitor arcu non, volutpat magna. Suspendisse aliquam eros odio, eu egestas metus gravida nec. Donec lacinia scelerisque eros, sit amet congue ipsum condimentum ac. Suspendisse id enim eget quam lobortis finibus quis et justo.
-            <br></br><br></br>
-            Cras ultricies tortor enim, a tincidunt neque auctor vitae. Proin eget nulla sit amet purus ullamcorper feugiat. Curabitur ullamcorper libero eget odio varius, id congue mauris convallis. Nunc consequat tincidunt nisi ac ornare. Sed suscipit faucibus interdum. Sed quis orci felis. Curabitur et volutpat nunc. Suspendisse potenti. Maecenas eget fringilla orci. Aenean sodales urna nec tristique commodo. 
-            Cras ultricies tortor enim, a tincidunt neque auctor vitae. Proin eget nulla sit amet purus ullamcorper feugiat. Curabitur ullamcorper libero eget odio varius, id congue mauris convallis. Nunc consequat tincidunt nisi ac ornare. Sed suscipit faucibus interdum. Sed quis orci felis. Curabitur et volutpat nunc. Suspendisse potenti. Maecenas eget fringilla orci. Aenean sodales urna nec tristique commodo. 
-          </Col>
-          <Col span = {1}></Col>
-          <Col span = {11}>
-            {/* Slideshow of shareable links */}
-            <Carousel effect="fade" autoplay>
-              <div>
-                <h3 style={contentStyle}>1</h3>
-              </div>
-              <div>
-                <h3 style={contentStyle}>2</h3>
-              </div>
-              <div>
-                <h3 style={contentStyle}>3</h3>
-              </div>
-              <div>
-                <h3 style={contentStyle}>4</h3>
-              </div>
-            </Carousel>
-          </Col>
-        </Row>
+            <Col span = {12} style= {{textAlign: "justify", textJustify: "inter-word"}}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mollis enim sit amet justo pharetra consequat. Phasellus nec odio sit amet ligula vehicula mollis sed nec lorem. Quisque lorem risus, vehicula ac ultrices a, euismod in nisl. Phasellus lobortis pretium eros eu eleifend. Aenean efficitur velit vel felis mattis volutpat. Aenean tincidunt vestibulum auctor. Sed ullamcorper malesuada risus blandit fermentum. Phasellus congue ipsum at fermentum luctus. Aenean est risus, mattis posuere sagittis quis, condimentum imperdiet magna. Mauris ornare mauris sed nisi sollicitudin, et finibus arcu fermentum. Suspendisse eget tortor imperdiet, condimentum tortor sed, rutrum turpis. Proin vitae risus tincidunt, porttitor arcu non, volutpat magna. Suspendisse aliquam eros odio, eu egestas metus gravida nec. Donec lacinia scelerisque eros, sit amet congue ipsum condimentum ac. Suspendisse id enim eget quam lobortis finibus quis et justo.
+              <br></br><br></br>
+              Cras ultricies tortor enim, a tincidunt neque auctor vitae. Proin eget nulla sit amet purus ullamcorper feugiat. Curabitur ullamcorper libero eget odio varius, id congue mauris convallis. Nunc consequat tincidunt nisi ac ornare. Sed suscipit faucibus interdum. Sed quis orci felis. Curabitur et volutpat nunc. Suspendisse potenti. Maecenas eget fringilla orci. Aenean sodales urna nec tristique commodo. 
+              Cras ultricies tortor enim, a tincidunt neque auctor vitae. Proin eget nulla sit amet purus ullamcorper feugiat. Curabitur ullamcorper libero eget odio varius, id congue mauris convallis. Nunc consequat tincidunt nisi ac ornare. Sed suscipit faucibus interdum. Sed quis orci felis. Curabitur et volutpat nunc. Suspendisse potenti. Maecenas eget fringilla orci. Aenean sodales urna nec tristique commodo. 
+            </Col>
+            <Col span = {1}></Col>
+            <Col span = {11}>
+              {/* Slideshow of shareable links */}
+              <Carousel effect="fade" autoplay>
+                <div>
+                  <h3 style={contentStyle}>1</h3>
+                </div>
+                <div>
+                  <h3 style={contentStyle}>2</h3>
+                </div>
+                <div>
+                  <h3 style={contentStyle}>3</h3>
+                </div>
+                <div>
+                  <h3 style={contentStyle}>4</h3>
+                </div>
+              </Carousel>
+            </Col>
+          </Row>
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' , height: '6vh', alignItems : 'center', backgroundColor: '#fff' }}>
-        <FooterContent/>
-      </Footer>
+      <FooterBar/>
     </Layout>
   );
 }
