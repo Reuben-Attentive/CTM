@@ -1,20 +1,16 @@
 import { useParams } from "react-router-dom";
-import React, { useState } from "react";
 import { Layout, Row, Col, Breadcrumb } from "antd";
-import FooterContent from "../Components/FooterContent";
-import SiderContent from "../Components/SiderContent";
+import FooterBar from "../Components/FooterBar";
+import SideNavbar from "../Components/SideNavbar";
 
-const { Content, Sider, Footer } = Layout;
+const { Content } = Layout;
 
 const Performance = () => {
   const { module } = useParams();
-  const [collapsed, setCollapsed] = useState(true);
 
   return (
     <Layout style={{ minHeight: "100vh", maxHeight: "100vh" }}>
-      <Sider collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-        <SiderContent collapsed={collapsed} />
-      </Sider>
+      <SideNavbar/>
       <Layout>
         <Content className="site-layout-first">
           <div style={{ padding: "2vw 2vw 0 2vw" }}>
@@ -44,9 +40,7 @@ const Performance = () => {
             </Row>
           </div>       
         </Content>
-        <Footer style={{ textAlign: "center", height: "48px", alignItems: "center", backgroundColor: "#fff", padding: 0 }}>
-          <FooterContent />
-        </Footer>
+        <FooterBar/>
       </Layout>
     </Layout>
   );

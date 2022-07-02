@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
-import { Layout, Table, Breadcrumb, Row, Col, Input, Dropdown, DatePicker } from "antd";
-import FooterContent from "../Components/FooterContent";
-import SiderContent from "../Components/SiderContent";
+import { Layout, Table, Breadcrumb, Row, Col, DatePicker } from "antd";
+import FooterBar from "../Components/FooterBar";
+import SideNavbar from "../Components/SideNavbar";
 
-const { Content, Sider, Footer } = Layout;
+const { Content } = Layout;
 const { RangePicker } = DatePicker;
 
 const Feedback = () => {
@@ -108,7 +108,7 @@ const Feedback = () => {
   
   return(
     <Layout style={{ minHeight: "100vh", maxHeight: "100vh" }}>
-        <SiderContent  />
+      <SideNavbar  />
       <Layout>
         <Content className="site-layout-first">
           <div style={{ padding: "2vw 2vw 0 1vw" }}>
@@ -127,17 +127,7 @@ const Feedback = () => {
             <Table columns={columns} dataSource={data} />
           </div>
         </Content>
-        <Footer
-          style={{
-            textAlign: "center",
-            height: "48px",
-            alignItems: "center",
-            backgroundColor: "#fff",
-            padding: 0,
-          }}
-        >
-          <FooterContent />
-        </Footer>
+        <FooterBar/>
       </Layout>
     </Layout>
   );

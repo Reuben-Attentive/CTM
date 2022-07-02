@@ -1,48 +1,34 @@
 import { useParams } from "react-router-dom";
-import React, { useState } from "react";
 import { Layout, Button, Breadcrumb } from "antd";
-import FooterContent from "../Components/FooterContent";
-import SiderContent from "../Components/SiderContent";
-import ChapterContent from "../Components/ChapterContent";
-
-const { Content, Sider, Footer } = Layout;
+import FooterBar from "../Components/FooterBar";
+import SideNavbar from "../Components/SideNavbar";
+import ChapterSidebar from "../Components/ChapterSidebar";
+const { Content } = Layout;
 
 const Tutorial = () => {
   const { module } = useParams();
   
-
   return (
     <Layout style={{ minHeight: "100vh", maxHeight: "100vh" }}>
-        <SiderContent  />
+      <SideNavbar />
       <Layout>
         <Content className="site-layout-first">
           <div style={{ padding: "2vw 2vw 0 1vw" }}>
             <Breadcrumb>
               <Breadcrumb.Item href="/">My games</Breadcrumb.Item>
-              <Breadcrumb.Item href="/">{module} </Breadcrumb.Item>
+              <Breadcrumb.Item href="/Residential%20Landscaping">{module} </Breadcrumb.Item>
               <Breadcrumb.Item href="/">Tutorial</Breadcrumb.Item>
             </Breadcrumb>
-            <br></br>
             <div style={{ height: 80 , display:"flex", justifyContent:"space-between", alignItems:"center"}}>
               <p style={{ fontSize:"x-large",fontWeight:600, margin: 0}}>Tutorials </p>
-              <a href = "/Residential%20Landscaping/tutorial/demo" target = "_blank"><Button style={{ width: 136 }} type="primary" size="normal">Demo</Button></a>
+              <a href = "https://annotations-stage.attentive.ai/?demo=1" target = "_blank" rel="noreferrer"><Button style={{ width: 136 }} type="primary" size="normal">Demo</Button></a>
             </div>
           </div>
           <Layout>
-            <ChapterContent/>
+            <ChapterSidebar/>
           </Layout>
         </Content>
-        <Footer
-          style={{
-            textAlign: "center",
-            height: "48px",
-            alignItems: "center",
-            backgroundColor: "#fff",
-            padding: 0,
-          }}
-        >
-          <FooterContent />
-        </Footer>
+        <FooterBar/>
       </Layout>
     </Layout>
   );

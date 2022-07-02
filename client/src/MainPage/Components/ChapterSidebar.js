@@ -3,7 +3,7 @@ import { Menu, Button, Layout, Checkbox, Row, Col, Progress } from "antd";
 import { ArrowRightOutlined, ArrowLeftOutlined } from "@ant-design/icons";
 const { Content, Sider } = Layout;
 
-const ChapterContent = () => {
+const ChapterSidebar = () => {
   const ChapterDummyData = require("../../Data/ChapterDummyData.json");
   const [collapsed, setCollapsed] = useState(false);
   const [showVideo, setShowVideo] = useState(true);
@@ -13,25 +13,21 @@ const ChapterContent = () => {
   const [chapterHeading, setChapterHeading] = useState("Chapter 1 : "+ChapterDummyData[0].chapter_name);
 
   const onVideoChange = (e) => {
-    console.log(`checked = ${e.target.checked}`);
     setShowVideo(!showVideo);
-    console.log(showVideo);
   };
 
   const onPdfChange = (e) => {
-    console.log(`checked = ${e.target.checked}`);
     setShowPdf(!showPdf);
   };
 
   function itemOnClick({ item, key, keyPath, domEvent }) {
-    
     ChapterDummyData.forEach((chapter) => {
+      // eslint-disable-next-line eqeqeq
       if (key == chapter.chapter_number) {
         setPdfURL(chapter.chapter_pdfURL);
         setVideoURL(chapter.chapter_videoURL);
-        console.log(chapter.chapter_pdfURL);
-        
         chapterItems.forEach((item) => {
+          // eslint-disable-next-line eqeqeq
           if (key == item.key) {
             setChapterHeading(item.label);
           }
@@ -47,8 +43,6 @@ const ChapterContent = () => {
       label: "chapter " + chapter.chapter_number + " : " + chapter.chapter_name,
     });
   });
-console.log('chapterItems',chapterItems);
-console.log('ChapterDummyData',ChapterDummyData);
 
   return (
     <Layout>
@@ -163,10 +157,8 @@ console.log('ChapterDummyData',ChapterDummyData);
                 height="100%"
               >
                 <p>
-                  Alternative text - include a link{" "}
-                  <a href="http://africau.edu/images/default/sample.pdf">
-                    {" "}
-                    to the PDF!
+                  <a href={pdfURL}>
+                    Link to the PDF!
                   </a>
                 </p>
               </object>
@@ -178,4 +170,4 @@ console.log('ChapterDummyData',ChapterDummyData);
   );
 };
 
-export default ChapterContent;
+export default ChapterSidebar;
