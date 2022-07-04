@@ -1,5 +1,15 @@
 import { useState } from "react";
-import { Menu, Button, Layout, Checkbox, Row, Col, Progress } from "antd";
+import {
+  Menu,
+  Button,
+  Layout,
+  Checkbox,
+  Radio,
+  Row,
+  Col,
+  Progress,
+  RadioChangeEvent,
+} from "antd";
 import { ArrowRightOutlined, ArrowLeftOutlined } from "@ant-design/icons";
 const { Content, Sider } = Layout;
 
@@ -8,9 +18,14 @@ const ChapterSidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [showVideo, setShowVideo] = useState(true);
   const [showPdf, setShowPdf] = useState(false);
-  const [videoURL, setVideoURL] = useState(ChapterDummyData[0].chapter_videoURL);
+  const [videoURL, setVideoURL] = useState(
+    ChapterDummyData[0].chapter_videoURL
+  );
   const [pdfURL, setPdfURL] = useState(ChapterDummyData[0].chapter_pdfURL);
-  const [chapterHeading, setChapterHeading] = useState("Chapter 1 : "+ChapterDummyData[0].chapter_name);
+  const [chapterHeading, setChapterHeading] = useState(
+    "Chapter 1 : " + ChapterDummyData[0].chapter_name
+  );
+  const [view, setView] = useState("Video");
 
   const onVideoChange = (e) => {
     setShowVideo(!showVideo);
@@ -106,17 +121,20 @@ const ChapterSidebar = () => {
       </Sider>
       <Content>
         <div className="site-layout-second">
-          <Row style={{marginBottom : 10 }}>
-            <Col span={12}>
+          <Row style={{ marginBottom: 10 }}>
+            <Col span={18}>
               <h1
-              style={{
-                color: "#212121",
-                fontSize: "medium",
-                margin: 0,}}>
-              {chapterHeading}</h1>
+                style={{
+                  color: "#212121",
+                  fontSize: "medium",
+                  margin: 0,
+                }}
+              >
+                {chapterHeading}
+              </h1>
             </Col>
-            <Col span={2}>View</Col>
-            <Col span={4}>
+            <Col span={1}>View</Col>
+            {/* <Col span={4}>
               <Checkbox onChange={onVideoChange} defaultChecked={showVideo}>
                 Video
               </Checkbox>
@@ -125,18 +143,22 @@ const ChapterSidebar = () => {
               <Checkbox onChange={onPdfChange} defaultChecked={showPdf}>
                 Pdf
               </Checkbox>
+            </Col> */}
+            <Col>
+              <Radio.Group onChange={(e: RadioChangeEvent)=>{setView(e.target.value);}} value={view}>
+                <Radio value={"Video"}>Video</Radio>
+                <Radio value={"Pdf"}>Pdf</Radio>
+                <Radio value={"Both"}>Both</Radio>
+              </Radio.Group>
             </Col>
           </Row>
           <Row style={{ minHeight: "65vh" }}>
-            <Col
-              span={showVideo && showPdf ? 14 : 24}
-              style={{ display: showVideo ? "block" : "none" }}
-            >
-              <div
+          <Col span= {view=="Video"?24: view=="Both" ?14:0} >
+          <div
                 className="video-responsive"
                 style={{
-                  height: showVideo && showPdf ? "450px" : "500px",
-                  width: showVideo && showPdf ? "660px" : "850px",
+                  height: view=="Both" ? "450px" : "500px",
+                  width: view=="Both" ? "642px" : "850px",
                 }}
               >
                 <iframe
@@ -145,24 +167,21 @@ const ChapterSidebar = () => {
                   frameBorder={0}
                 ></iframe>
               </div>
-            </Col>
-            <Col
-              span={showVideo && showPdf ? 10 : 24}
-              style={{ display: showPdf ? "block" : "none" }}
-            >
-              <object
+          </Col>
+          <Col span= {view=="Pdf"?24: view=="Both" ?10:0} style={{   paddingLeft: 10}}>
+          <iframe src={pdfURL} width="100%" height="100%" allow="autoplay"></iframe>
+          {/* <object
                 data={pdfURL}
                 type="application/pdf"
                 width="100%"
                 height="100%"
               >
                 <p>
-                  <a href={pdfURL}>
-                    Link to the PDF!
-                  </a>
+                  <a href={pdfURL}>Link to the PDF!</a>
                 </p>
-              </object>
-            </Col>
+              </object> */}
+          </Col>
+            
           </Row>
         </div>
       </Content>
