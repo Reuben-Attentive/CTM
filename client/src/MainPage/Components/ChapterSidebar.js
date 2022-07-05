@@ -37,12 +37,11 @@ const ChapterSidebar = () => {
 
   function itemOnClick({ item, key, keyPath, domEvent }) {
     ChapterDummyData.forEach((chapter) => {
-      // eslint-disable-next-line eqeqeq
       if (key == chapter.chapter_number) {
         setPdfURL(chapter.chapter_pdfURL);
         setVideoURL(chapter.chapter_videoURL);
         chapterItems.forEach((item) => {
-          // eslint-disable-next-line eqeqeq
+
           if (key == item.key) {
             setChapterHeading(item.label);
           }
@@ -134,16 +133,7 @@ const ChapterSidebar = () => {
               </h1>
             </Col>
             <Col span={1}>View</Col>
-            {/* <Col span={4}>
-              <Checkbox onChange={onVideoChange} defaultChecked={showVideo}>
-                Video
-              </Checkbox>
-            </Col>
-            <Col span={4}>
-              <Checkbox onChange={onPdfChange} defaultChecked={showPdf}>
-                Pdf
-              </Checkbox>
-            </Col> */}
+
             <Col>
               <Radio.Group onChange={(e: RadioChangeEvent)=>{setView(e.target.value);}} value={view}>
                 <Radio value={"Video"}>Video</Radio>
@@ -159,27 +149,26 @@ const ChapterSidebar = () => {
                 style={{
                   height: view=="Both" ? "450px" : "500px",
                   width: view=="Both" ? "642px" : "850px",
+                  position: "relative"
                 }}
               >
                 <iframe
                   src={videoURL}
+                  sandbox="allow-scripts allow-same-origin"
+                  allowfullscreen="true"
+                  scrolling="no"
+                  seamless=""
                   title="Chapter Video"
-                  frameBorder={0}
+                  frameBorder= "0"
                 ></iframe>
               </div>
           </Col>
           <Col span= {view=="Pdf"?24: view=="Both" ?10:0} style={{   paddingLeft: 10}}>
-          <iframe src={pdfURL} width="100%" height="100%" allow="autoplay"></iframe>
-          {/* <object
-                data={pdfURL}
-                type="application/pdf"
-                width="100%"
-                height="100%"
-              >
-                <p>
-                  <a href={pdfURL}>Link to the PDF!</a>
-                </p>
-              </object> */}
+          <iframe 
+          sandbox="allow-scripts allow-same-origin"
+          allowfullscreen="true"
+          src={pdfURL} width="100%" height="100%" allow="autoplay"></iframe>
+         
           </Col>
             
           </Row>

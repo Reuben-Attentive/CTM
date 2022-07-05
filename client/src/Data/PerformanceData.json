@@ -41,6 +41,27 @@
             "ideal time range": "15-25 mins"
           }
         }
+      },
+    "level_3": {
+        "trial_1": {
+          "property_1": {
+            "property_id": 1,
+            "lens_url": "https://lens.attentive.ai/shared-view?id=62b197dddb71a016e4aa92da",
+            "propert_score": 6,
+            "ML_usage": "ok",
+            "Time spent": "bad",
+            "time_taken": "40 mins",
+            "ideal time range": "15-25 mins"
+          },
+          "property_2": {
+            "lens_url": "https://lens.attentive.ai/shared-view?id=62b197dddb71a016e4aa92da",
+            "propert_score": 6,
+            "ML_usage": "ok",
+            "Time spent": "bad",
+            "time_taken": "40 mins",
+            "ideal time range": "15-25 mins"
+          }
+        }
       }
   }
 }

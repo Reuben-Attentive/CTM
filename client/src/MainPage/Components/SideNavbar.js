@@ -35,7 +35,6 @@ const SideNavbar = () => {
 
   const items = [
     getItem('My Games', '1', <HomeOutlined/>),
-    getItem('Leaderboard', '2', <BarChartOutlined />),
     getItem('Feedback', '3', <MessageOutlined />),
   ];
 
@@ -58,8 +57,8 @@ const SideNavbar = () => {
         <br></br>
         <div className='side-navbar-menu'>
         <i class="fa-regular fa-gamepad-modern"></i>
-        <Menu style={{background: "#212121"}} theme="dark" selectedKeys={activeKey} mode="inline" items={items} onClick= {itemOnClick}/>
-        <Menu style={{background: "#212121"}} className='side-navbar-lowermenu' theme="dark" selectedKeys={activeKey} mode="inline" items={items2} onClick= {itemOnClick}/>
+        <Menu style={{background: "#212121", marginTop:50}} theme="dark" selectedKeys={activeKey} mode="inline" items={items} onClick= {itemOnClick}/>
+        <Menu style={{background: "#212121", marginTop:390}}  theme="dark" selectedKeys={activeKey} mode="inline" items={items2} onClick= {itemOnClick}/>
         </div>
       </div>
     </Sider> 

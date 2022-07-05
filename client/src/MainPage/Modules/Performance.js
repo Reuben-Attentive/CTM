@@ -28,9 +28,9 @@ const Performance = () => {
           <div style={{ padding: "2vw 2vw 0 1vw" }}>
             <Breadcrumb>
               <Breadcrumb.Item href="/">My games</Breadcrumb.Item>
-              <Breadcrumb.Item href="/">{module}</Breadcrumb.Item>
-              <Breadcrumb.Item href="/">Practice Mode</Breadcrumb.Item>
-              <Breadcrumb.Item href="/">Performance</Breadcrumb.Item>
+              <Breadcrumb.Item href={`/${module}`}>{module}</Breadcrumb.Item>
+              <Breadcrumb.Item href={`/${module}/practice-mode`}>Practice Mode</Breadcrumb.Item>
+              <Breadcrumb.Item >Performance</Breadcrumb.Item>
             </Breadcrumb>
             <br></br>
             <h1 className="performance-h1">Performance ({module})</h1>
