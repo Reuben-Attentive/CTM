@@ -25,9 +25,10 @@ const Module = () => {
         <div className="site-layout-content">
           <Breadcrumb>
             <Breadcrumb.Item href = "/"><HomeOutlined /></Breadcrumb.Item>
-            <Breadcrumb.Item>My games</Breadcrumb.Item>
+            <Breadcrumb.Item href = "/">My games</Breadcrumb.Item>
             <Breadcrumb.Item>{module}</Breadcrumb.Item>
           </Breadcrumb>
+          <h2 className="module-h2 green-text">OVERVIEW</h2>
           <br></br>
           <br></br>
           <Row justify="space-around" align="middle">

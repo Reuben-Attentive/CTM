@@ -1,9 +1,7 @@
 {
   "user_data": {
     "user_id": 11,
-    "paving_permission": true,
-    "commercial_permission": true,
-    "one-carto_permission": true,
+    "user_module_permission":[{"paving_permission": true},{"commercial_permission": true},{"one-carto_permission": true}],
     "modules": {
       "paving": {
         "tutorial_complete":true,
