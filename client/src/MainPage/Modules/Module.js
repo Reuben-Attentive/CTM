@@ -3,10 +3,13 @@ import { Layout, Button, Row, Col, Breadcrumb, Carousel} from 'antd';
 import { HomeOutlined } from '@ant-design/icons';
 import HeaderNavbar from "../Components/HeaderNavbar";
 import FooterBar from "../Components/FooterBar";
+import { useState } from "react";
 const { Content } = Layout;
 
 const Module = () => {
   const {module} = useParams();
+  const [practiceDisable,setPracticeDisable]=useState(false);
+
   const contentStyle = {
     height: '400px',
     color: '#fff',
@@ -22,9 +25,10 @@ const Module = () => {
         <div className="site-layout-content">
           <Breadcrumb>
             <Breadcrumb.Item href = "/"><HomeOutlined /></Breadcrumb.Item>
-            <Breadcrumb.Item>My games</Breadcrumb.Item>
+            <Breadcrumb.Item href = "/">My games</Breadcrumb.Item>
             <Breadcrumb.Item>{module}</Breadcrumb.Item>
           </Breadcrumb>
+          <h2 className="module-h2 green-text">OVERVIEW</h2>
           <br></br>
           <br></br>
           <Row justify="space-around" align="middle">
@@ -34,7 +38,7 @@ const Module = () => {
               </Button>
             </Col>
             <Col span = {4}>
-              <Button type="primary" htmlType="submit" disabled>
+              <Button type="primary" htmlType="submit" disabled={practiceDisable} href = {`/${module}/practice-mode`} >
                 Practice Arena
               </Button>
             </Col>

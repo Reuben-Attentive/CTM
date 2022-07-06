@@ -1,0 +1,106 @@
+{
+  "user_data": {
+    "user_id": 11,
+    "user_module_permission":[{"paving_permission": true},{"commercial_permission": true},{"one-carto_permission": true}],
+    "modules": {
+      "paving": {
+        "tutorial_complete":true,
+        "practice_levels": {
+          "level_1": {
+            "level_name":"Level 1",
+            "best_score": 84,
+            "least_score": 41,
+            "last_score": 67,
+            "trial_1": {
+              "carto_score": 56,
+              "properties": {
+                "property_1": {
+                  "property_id": 1,
+                  "attempt_status": true,
+                  "carto_output_lens_url": "https://lens.attentive.ai/shared-view?id=62b197dddb71a016e4aa92da",
+                  "propert_score": 6,
+                  "ML_usage": "ok",
+                  "Time spent": "bad",
+                  "time_taken": "40 mins",
+                  "ideal time range": "15-25 mins",
+                  "feedback": "more accuracy required on lawns"
+                },
+                "property_2": {
+                  "lens_url": "https://lens.attentive.ai/shared-view?id=6267d3044c87668fa3d130e5",
+                  "propert_score": 6,
+                  "ML_usage": "ok",
+                  "Time spent": "bad",
+                  "time_taken": "40 mins",
+                  "ideal time range": "15-25 mins",
+                  "feedback": "more accuracy required on lawns"
+                }
+              }
+            }
+          },
+          "level_2": {
+            "level_name":"Level 2",
+            "best_score": 82,
+            "least_score": 42,
+            "last_score": 62,
+            "trial_1": {
+              "carto_score": 56,
+              "properties": {
+                "property_1": {
+                  "property_id": 1,
+                  "attempt_status": true,
+                  "carto_output_lens_url": "https://lens.attentive.ai/shared-view?id=62b197dddb71a016e4aa92da",
+                  "propert_score": 6,
+                  "ML_usage": "ok",
+                  "Time spent": "bad",
+                  "time_taken": "40 mins",
+                  "ideal time range": "15-25 mins",
+                  "feedback": "more accuracy required on lawns"
+                },
+                "property_2": {
+                  "lens_url": "https://lens.attentive.ai/shared-view?id=6267d3044c87668fa3d130e5",
+                  "propert_score": 6,
+                  "ML_usage": "ok",
+                  "Time spent": "bad",
+                  "time_taken": "40 mins",
+                  "ideal time range": "15-25 mins",
+                  "feedback": "more accuracy required on lawns"
+                }
+              }
+            }
+          },
+          "level_3": {
+            "level_name":"Level 3",
+            "best_score": 83,
+            "least_score": 43,
+            "last_score": 63,
+            "trial_1": {
+              "carto_score": 56,
+              "properties": {
+                "property_1": {
+                  "property_id": 1,
+                  "attempt_status": true,
+                  "carto_output_lens_url": "https://lens.attentive.ai/shared-view?id=62b197dddb71a016e4aa92da",
+                  "propert_score": 6,
+                  "ML_usage": "ok",
+                  "Time spent": "bad",
+                  "time_taken": "40 mins",
+                  "ideal time range": "15-25 mins",
+                  "feedback": "more accuracy required on lawns"
+                },
+                "property_2": {
+                  "lens_url": "https://lens.attentive.ai/shared-view?id=6267d3044c87668fa3d130e5",
+                  "propert_score": 6,
+                  "ML_usage": "ok",
+                  "Time spent": "bad",
+                  "time_taken": "40 mins",
+                  "ideal time range": "15-25 mins",
+                  "feedback": "more accuracy required on lawns"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -49,6 +49,7 @@ const HeaderNavbar = () => {
         <div>
           <Dropdown style={{ height: 50, width: 50 }} overlay={menu} placement="bottomLeft">
             <UserOutlined style={{
+              padding: 2,
               color: "white",
               background: "#4CBB7F",
               height: 30,

@@ -25,8 +25,11 @@ const Home = () => {
       <Content>
         <div className="site-layout-content">
           <div>
-            <h2>FX Training Module</h2>
-            <Row gutter={16}>
+            <h1 className="mygames-h1">WELCOME TO THE GAME OF CARTOS !!!</h1>
+            {/* <h2 className="mygames-h2">WELCOME TO THE GAME OF CARTOS !!!</h2> */}
+            <h2 className="mygames-h2">MY GAMES</h2>
+            {/* <h3 className="mygames-h3">MY GAMES</h3> */}
+            <Row justify="center" gutter={36} >
               {moduleData.map((item, index) => {
                 return (
                   <Col 
@@ -37,7 +40,7 @@ const Home = () => {
                       span: 12,
                     }}
                     lg={{
-                      span: 8,
+                      span: 6,
                     }}
                     key={index}>
                     <a href={`/${item.module_name}`}>

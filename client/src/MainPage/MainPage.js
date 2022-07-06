@@ -7,6 +7,7 @@ import Module from './Modules/Module';
 import Tutorial from './Modules/Tutorial';
 import Feedback from './Modules/Feedback';
 import Performance from './Modules/Performance';
+import PracticeArena from './Modules/PracticeArena';
 
 const MainPage = () => {
   return (
@@ -15,6 +16,7 @@ const MainPage = () => {
         <Route path='/' element={<Home/>} />
         <Route path='/:module/' element={<Module/>}/>
         <Route path='/:module/tutorial' element={<Tutorial/>}/>
+        <Route path='/:module/practice-mode' element={<PracticeArena/>}/>
         <Route path='/:module/practice-mode/performance' element={<Performance/>}/>
         <Route path='/feedback/:module/' element={<Feedback/>}/>
         <Route path="*" element={<Navigate to="/" replace />} /> 
